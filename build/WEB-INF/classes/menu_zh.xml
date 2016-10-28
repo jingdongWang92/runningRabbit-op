@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu type="op">
+	<tab>
+		<group name="商户管理" class="fa fa-sitemap" id="systemManage">
+			<childgroup name="我的信息" url="myOperator_toList.action" id="myOperator"/>
+			<childgroup name="奖券管理" url="coupon_toList.action" id="coupon"/>
+			<childgroup name="奖券核销" url="useCoupon_toList.action" id="useCoupon"/>
+		</group>
+		<group name="后台管理" class="fa fa-sitemap" id="systemManage">
+			<childgroup name="广告管理" url="leaflet_toList.action" id="leaflet"/>
+			<childgroup name="活动管理" url="activity_toList.action" id="activity"/>
+			<childgroup name="兔子管理" url="rabbit_toList.action" id="rabbit"/>
+			<childgroup name="用户管理" url="user_toList.action" id="user"/>
+		</group>
+		<group name="系统管理" class="fa fa-sitemap" id="systemManage">
+			<childgroup name="全局设置" url="globalSet_toList.action" id="globalSet"/>
+			<childgroup name="角色管理" url="role_toList.action" id="role"/>
+			<childgroup name="操作员管理" url="operator_toList.action" id="operator"/>
+		</group>
+	</tab>
+</menu>

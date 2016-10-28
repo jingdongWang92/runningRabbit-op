@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts-core" namespace="/" extends="struts-global">
+
+		<!-- 日志管理 -->
+		<action name="log_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.operateLog.OperateLogAction">
+			<result name="list">/sys/operatelog/operateLogList.jsp</result>
+			<result name="detail">/sys/operatelog/operateLogDetail.jsp</result>
+		</action>
+
+		<!-- 角色 -->
+		<action name="role_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.role.RoleAction">
+			<result name="list">/sys/role/roleList.jsp</result>
+			<result name="add">/sys/role/roleAdd.jsp</result>
+			<result name="detail">/sys/role/roleDetail.jsp</result>
+			<result name="edit">/sys/role/roleEdit.jsp</result>
+		</action>
+
+		<!-- 操作员管理 -->
+		<action name="operator_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.operator.OperatorAction">
+			<result name="list">/sys/operator/operatorList.jsp</result>
+			<result name="add">/sys/operator/operatorAdd.jsp</result>
+			<result name="edit">/sys/operator/operatorEdit.jsp</result>
+			<result name="editpwd">/sys/operator/operatorEditPwd.jsp</result>
+			<result name="detail">/sys/operator/operatorDetail.jsp</result>
+			<result name="resetpwd">/sys/operator/operatorResetPwd.jsp</result>
+		</action>
+
+		<!-- 系统参数管理 -->
+		<action name="globalSet_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.syscfg.SysConfigAction">
+			<result name="list">/sys/config/system/sysCfgParamList.jsp</result>
+			<result name="edit">/sys/config/system/sysCfgParamEdit.jsp</result>
+		</action>
+	</package>
+</struts>

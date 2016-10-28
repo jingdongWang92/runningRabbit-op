@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="GlobalResource_op"></constant>
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.i18n.reload" value="false"/>
+	<constant name="struts.browserCache" value="false"/>
+	<constant name="struts.configuration.xml.reload" value="false"/>
+	<constant name="struts.ui.theme" value="simple"/><!-- simple,xhtml,css_xhtml -->
+	<constant name="struts.ui.templateDir" value="template"/>
+	<constant name="struts.ui.templateSuffix" value="ftl"/>
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="true"/>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory.spring.autoWire" value="byName" />
+
+	<!-- 上传文件大小，第一关拦截10M -->
+	<constant name="struts.multipart.maxSize" value="2097152" />
+
+
+	<include file="/struts2/struts-global-config.xml" />
+	<include file="/struts2/struts-system-config.xml" />
+	<include file="/struts2/struts-base-config.xml" />
+
+	<bean type="com.opensymphony.xwork2.UnknownHandler" name="CommonUnknownHandler"
+		class="com.xiaoguo.jc.op.util.struts2.CommonUnknownHandler" />
+		
+	<unknown-handler-stack>
+		<unknown-handler-ref name="CommonUnknownHandler" />
+	</unknown-handler-stack>
+</struts>

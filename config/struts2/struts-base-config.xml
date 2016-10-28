@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts-base" namespace="/" extends="struts-global">
+		
+		<!-- 活动管理 -->
+		<action name="activity_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.ActivityAction">
+			<result name="list">/ttg/activity/activityList.jsp</result>
+			<result name="detail">/ttg/activity/activityDetail.jsp</result>
+			<result name="add">/ttg/activity/activityAdd.jsp</result>
+			<result name="edit">/ttg/activity/activityEdit.jsp</result>
+			<result name="setRabbitMap">/ttg/activity/setRabbitMap.jsp</result>
+			<result name="addRabbit">/ttg/activity/addRabbit.jsp</result>
+		</action>
+		
+		<!-- 广告管理 -->
+		<action name="leaflet_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.LeafletAction">
+			<result name="list">/ttg/leaflet/leafletList.jsp</result>
+			<result name="detail">/ttg/leaflet/leafletDetail.jsp</result>
+			<result name="add">/ttg/leaflet/leafletAdd.jsp</result>
+			<result name="edit">/ttg/leaflet/leafletEdit.jsp</result>
+		</action>
+		
+		<!-- 奖券管理 -->
+		<action name="coupon_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.CouponAction">
+			<result name="list">/ttg/coupon/couponList.jsp</result>
+			<result name="detail">/ttg/coupon/couponDetail.jsp</result>
+			<result name="add">/ttg/coupon/couponAdd.jsp</result>
+			<result name="edit">/ttg/coupon/couponEdit.jsp</result>
+			<result name="upLoad">/ttg/coupon/couponUpLoad.jsp</result>
+		</action>
+		
+		<!-- 我的信息管理 -->
+		<action name="myOperator_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.MyOperatorAction">
+			<result name="list">/ttg/myOperator/myOperatorList.jsp</result>
+			<result name="detail">/ttg/myOperator/myOperatorDetail.jsp</result>
+			<result name="add">/ttg/myOperator/myOperatorAdd.jsp</result>
+			<result name="edit">/ttg/myOperator/myOperatorEdit.jsp</result>
+			<result name="upLoad">/ttg/myOperator/myOperatorUpLoad.jsp</result>
+			<result name="resetpwd">/ttg/myOperator/myOperatorResetPwd.jsp</result>
+		</action>
+		
+		<!-- 用户管理 -->
+		<action name="user_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.UserAction">
+			<result name="list">/ttg/user/userList.jsp</result>
+			<result name="detail">/ttg/user/userDetail.jsp</result>
+			<result name="add">/ttg/user/userAdd.jsp</result>
+			<result name="edit">/ttg/user/userEdit.jsp</result>
+		</action>
+		
+		<!-- 兔子管理 -->
+		<action name="rabbit_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.RabbitAction">
+			<result name="list">/ttg/rabbit/rabbitList.jsp</result>
+			<result name="detail">/ttg/rabbit/rabbitDetail.jsp</result>
+			<result name="add">/ttg/rabbit/rabbitAdd.jsp</result>
+			<result name="edit">/ttg/rabbit/rabbitEdit.jsp</result>
+		</action>
+		
+		<!-- 核销管理 -->
+		<action name="useCoupon_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.ttg.UseCouponAction">
+			<result name="list">/ttg/useCoupon/useCouponList.jsp</result>
+			<result name="detail">/ttg/useCoupon/useCouponDetail.jsp</result>
+			<result name="add">/ttg/useCoupon/useCouponAdd.jsp</result>
+			<result name="edit">/ttg/useCoupon/useCouponEdit.jsp</result>
+			<result name="confirm">/ttg/useCoupon/useCouponConfirm.jsp</result>
+		</action>
+	</package>
+</struts>

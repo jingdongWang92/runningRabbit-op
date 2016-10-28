@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="struts-global" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="log4Exception"
+				class="com.xiaoguo.jc.op.web.interceptor.Log4ExceptionInterceptor"></interceptor>
+			<interceptor-stack name="webStack">
+				<interceptor-ref name="log4Exception" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="webStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="login">/login.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/common/error/500.jsp</result>
+			<result name="page404">/syserror.jsp</result>
+			<result name="nopriv">/noprivs.jsp</result>
+			<result name="uploaderr">/upload-error.jsp</result>
+		</global-results>
+
+		<!-- 登录 -->
+		<action name="login_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.login.LoginAction">
+			<result name="login">/login.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<!-- 首页 -->
+		<action name="index_*" method="{1}"
+			class="com.xiaoguo.jc.op.action.index.IndexAction">
+			<result name="success">/index.jsp</result>
+			<result name="toSelfPwd">/self/editPwd.jsp</result>
+			<result name="toSelfFrequentContact">/self/contactEdit.jsp</result>
+			<result name="toSelfInfo">/self/operatorEdit.jsp</result>
+		</action>
+
+		<!-- 所有弹出请求页面处理 -->
+		<action name="popup_*" method="{1}" class="com.xiaoguo.jc.op.action.popup.PopupAction">
+			<result name="operatorPopup">/popup/operatorPopup.jsp</result>
+			<result name="mapCoordinate">/popup/mapCoordinate.jsp</result>
+		</action>
+
+	</package>
+</struts>

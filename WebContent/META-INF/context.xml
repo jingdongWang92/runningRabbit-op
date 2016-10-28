@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context useHttpOnly="true">
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	
+	<Resource name ="jdbc/thirdgsDS" 
+		auth="Container" 
+		type="javax.sql.DataSource" 
+		factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+		driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://121.42.31.38:3306/twotwogo?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"
+		username="root" 
+		password="TCZAFLWsyhy2yh"
+		maxActive="50" 
+		minIdle="15" 
+		initialSize="15"
+		maxWait="10000" 
+		numTestsPerEvictionRun="50"
+		removeAbandoned="true" 
+		removeAbandonedTimeout="300" 
+		logAbandoned="true"
+		testWhileIdle="true"
+		validationQuery="select 1 "
+		validationQueryTimeout="1"
+		timeBetweenEvictionRunsMillis="30000"		
+		testOnBorrow="true" 
+		testOnReturn="true"
+		poolPreparedStatements="true"
+		maxPoolPreparedStatementPerConnectionSize="50"
+		filters="config,stat,slf4j"
+	/>
+</Context>   
